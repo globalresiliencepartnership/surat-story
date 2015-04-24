@@ -1,4 +1,4 @@
-# GRP Map
+# GRP Narrative
 
 ## Development environment
 To set up the development environment for this website, you'll need to install the following on your system:
