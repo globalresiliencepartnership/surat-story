@@ -238,28 +238,28 @@ Grp.Views = Grp.Views || {};
 
 		this.floodLayer1 = L.geoJson(floodLevel1Json, {
 		  style: function (feature) {
-			return { color: '#009ede', weight: '0', fillOpacity: 0.5 }
+			return { color: '#009ede', weight: '0', fillOpacity: 0.4 }
 		  }
 		});
 
 
 		this.floodLayer2 = L.geoJson(floodLevel2Json, {
 		  style: function (feature) {
-			return { color: '#009ede', weight: '0', fillOpacity: 0.5 }
+			return { color: '#009ede', weight: '0', fillOpacity: 0.4 }
 		  }
 		});
 
 
 		this.floodLayer3 = L.geoJson(floodLevel3Json, {
 		  style: function (feature) {
-			return { color: '#009ede', weight: '0', fillOpacity: 0.2 }
+			return { color: '#009ede', weight: '0', fillOpacity: 0.4 }
 		  }
 		});
 
 
 		this.floodLayer4 = L.geoJson(floodLevel4Json, {
 		  style: function (feature) {
-			return { color: '#009ede', weight: '0', fillOpacity: 0.2 }
+			return { color: '#009ede', weight: '0', fillOpacity: 0.4 }
 		  }
 		});
 
@@ -291,7 +291,10 @@ Grp.Views = Grp.Views || {};
       var _self = this;
 
 	 this.sidebarView
-	    .bind('nav:flood', this.navFloodClick, this);
+	    .bind('nav:flood1', this.navFloodLayer1Click, this)
+	    .bind('nav:flood2', this.navFloodLayer2Click, this)
+	    .bind('nav:flood3', this.navFloodLayer3Click, this)
+	    .bind('nav:flood4', this.navFloodLayer4Click, this);
         
       this.tourView
         .bind('tour:next', this.tourNavNextBtnClick, this)
@@ -329,9 +332,43 @@ Grp.Views = Grp.Views || {};
      * Event listener for 'tour:prev'.
      * This event is triggered from the tour view.
      */
-    navFloodClick: function() {
+    navFloodLayer1Click: function() {
     
-      console.log(this);
+     if (this.map.hasLayer(this.floodLayer1)) {
+        this.map.removeLayer(this.floodLayer1);
+     } else {
+        this.map.addLayer(this.floodLayer1);
+     }
+    
+    },
+    
+    navFloodLayer2Click: function() {
+    
+     if (this.map.hasLayer(this.floodLayer2)) {
+        this.map.removeLayer(this.floodLayer2);
+     } else {
+        this.map.addLayer(this.floodLayer2);
+     }
+    
+    },
+    
+    navFloodLayer3Click: function() {
+    
+     if (this.map.hasLayer(this.floodLayer3)) {
+        this.map.removeLayer(this.floodLayer3);
+     } else {
+        this.map.addLayer(this.floodLayer3);
+     }
+    
+    },
+    
+    navFloodLayer4Click: function() {
+    
+     if (this.map.hasLayer(this.floodLayer4)) {
+        this.map.removeLayer(this.floodLayer4);
+     } else {
+        this.map.addLayer(this.floodLayer4);
+     }
     
     },
 

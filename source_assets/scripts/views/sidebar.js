@@ -15,7 +15,10 @@ Grp.Views = Grp.Views || {};
       'click #nav-prev' : 'navPrevBtnClick',
       'click #nav-next' : 'navNextBtnClick',
       'click #nav-about' : 'navAboutBtnClick',
-      'click .flood-guage li a' : 'navFloodGuageClick'
+      'click .flood-guage li a[data-layer="floodLayer1"]' : 'navFloodLayer1Click',
+      'click .flood-guage li a[data-layer="floodLayer2"]' : 'navFloodLayer2Click',
+      'click .flood-guage li a[data-layer="floodLayer3"]' : 'navFloodLayer3Click',
+      'click .flood-guage li a[data-layer="floodLayer4"]' : 'navFloodLayer4Click'
     },
 
     data: null,
@@ -64,9 +67,28 @@ Grp.Views = Grp.Views || {};
       this.trigger('nav:about');
     },
     
-    navFloodGuageClick: function(e) {
+    navFloodLayer1Click: function(e) {
        e.preventDefault();
-      this.trigger('nav:flood');
+       $(e.target).toggleClass('active');
+      this.trigger('nav:flood1');
+    },
+    
+    navFloodLayer2Click: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:flood2');
+    },
+
+    navFloodLayer3Click: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:flood3');
+    },
+    
+    navFloodLayer4Click: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:flood4');
     }
 
   });

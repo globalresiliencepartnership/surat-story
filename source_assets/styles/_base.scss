@@ -255,9 +255,20 @@ h2 {
   ul li a {
     display: block;
     width: 28px;
-    height: 28px;
-    background: #eee;
+    height: 50px;
+    border: 1px solid #999;
     margin-bottom: 1px;
-    text-indent: -9999px;
+  }
+  ul li a.active {
+    transition: background-color 0.5s ease;
+    background: #009ede;
+  }
+  .flood-ind {
+    margin-top: -10px;
+    margin-left: -50px;
+    display: block;
+    width: 40px;
+    color: #fff;
+    text-align: right;
   }
 }
