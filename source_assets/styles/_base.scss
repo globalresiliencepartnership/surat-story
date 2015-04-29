@@ -238,3 +238,26 @@ h2 {
     padding: 30px;
   }
 }
+
+.leaflet-control-zoom {
+    margin-right: 20px !important;
+    margin-top: 20px !important;
+}
+
+.flood-guage {
+  
+  ul {
+    list-style-type: none;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+  }
+  ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: #eee;
+    margin-bottom: 1px;
+    text-indent: -9999px;
+  }
+}

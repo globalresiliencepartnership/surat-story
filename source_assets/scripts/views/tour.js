@@ -29,7 +29,11 @@ Grp.Views = Grp.Views || {};
     },
 
     render: function() {
+      
+      var _self = this;
+      
       console.log('tour data', this.data);
+      
       this.$el.find('.tour').html(this.template(this.data));
       this.$el.addClass('revealed');
       return this;
@@ -37,6 +41,7 @@ Grp.Views = Grp.Views || {};
 
     ///////////////////////////////////
     /// Event listeners
+    
     
 
     tourPrevBtnClick: function(e) {
@@ -51,6 +56,7 @@ Grp.Views = Grp.Views || {};
       this.trigger('tour:next');
        //console.log('tour next');
     },
+    
 
   });
 

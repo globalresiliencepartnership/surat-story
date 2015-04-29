@@ -14,7 +14,8 @@ Grp.Views = Grp.Views || {};
       'click #nav-up' : 'navUpBtnClick',
       'click #nav-prev' : 'navPrevBtnClick',
       'click #nav-next' : 'navNextBtnClick',
-      'click #nav-about' : 'navAboutBtnClick'
+      'click #nav-about' : 'navAboutBtnClick',
+      'click .flood-guage li a' : 'navFloodGuageClick'
     },
 
     data: null,
@@ -62,6 +63,11 @@ Grp.Views = Grp.Views || {};
       e.preventDefault();
       this.trigger('nav:about');
     },
+    
+    navFloodGuageClick: function(e) {
+       e.preventDefault();
+      this.trigger('nav:flood');
+    }
 
   });
 
