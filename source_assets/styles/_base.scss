@@ -35,9 +35,7 @@ h2 {
   background: #000;
 }
 
-.leaflet-tile-pane {
-  opacity: 0.6;
-}
+
 
 #about {
   width: 100%;
@@ -270,5 +268,45 @@ h2 {
     width: 40px;
     color: #fff;
     text-align: right;
+  }
+}
+
+.context-layers {
+    ul {
+    list-style-type: none;
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+  }
+  ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #999;
+    margin-bottom: 1px;
+  }
+  .context-ind {
+    margin-top: 5px;
+    margin-left: -60px;
+    display: block;
+    font-size: 13px;
+    width: 50px;
+    color: #fff;
+    text-align: right;
+  }
+  a[data-layer="satellite"] {
+    background: url("images/satellite.png");
+    background-size: cover;
+  }
+  a[data-layer="streets"] {
+    background: url("images/streets.png");
+    background-size: cover;
+  }
+  a[data-layer="zones"] {
+    background: url("images/zones.png");
+    background-size: cover;
+  }
+  a.active {
+    opacity: 0.7;
   }
 }

@@ -40,12 +40,13 @@ Grp.Views = Grp.Views || {};
     // Area to use for checking nearby markers. From turf.buffer()
     markerNearbyZone: null,
     nearbyMarkersLayer: null,
-    cityZones: null,
     floodLayer1: null,
     floodLayer2: null,
     floodLayer3: null,
     floodLayer4: null,
-    skeleton: null,
+    satellite: null,
+    streets: null,
+    cityZones: null,
     
     activeLayers: [],
 
@@ -87,11 +88,14 @@ Grp.Views = Grp.Views || {};
       
       console.log(_self.tourItems);
 
-      this.map = L.mapbox.map('map', 'devseed.la1fieg0', { maxZoom: 15, zoomControl: false });
+      this.map = L.mapbox.map('map', null, { maxZoom: 17, zoomControl: false });
       
       new L.Control.Zoom({ position: 'topright' }).addTo(this.map);
       
-      this.skeleton = L.mapbox.tileLayer('devseed.c6aac938');
+      this.streets = L.mapbox.tileLayer('devseed.c6aac938');
+      this.satellite = L.mapbox.tileLayer('devseed.la1fieg0');
+      
+      this.map.addLayer(this.streets);
       
       // satellite: devseed.la1fieg0
       // skeleton: devseed.c6aac938
@@ -269,11 +273,6 @@ Grp.Views = Grp.Views || {};
       var zoom = this.tourItems[0].attributes.zoom;
       this.map.setView([location.latitude, location.longitude], zoom);
       
-       var layer = _self.tourItems[0].attributes.layer;
-      
-      if (layer === 'cityZones') {
-        this.map.addLayer(this.cityZones);
-      }
 
       this.addEventListeners();
 
@@ -294,7 +293,10 @@ Grp.Views = Grp.Views || {};
 	    .bind('nav:flood1', this.navFloodLayer1Click, this)
 	    .bind('nav:flood2', this.navFloodLayer2Click, this)
 	    .bind('nav:flood3', this.navFloodLayer3Click, this)
-	    .bind('nav:flood4', this.navFloodLayer4Click, this);
+	    .bind('nav:flood4', this.navFloodLayer4Click, this)
+	    .bind('nav:satellite', this.navSatelliteClick, this)
+	    .bind('nav:streets', this.navStreetsClick, this)
+	    .bind('nav:zones', this.navZonesClick, this);
         
       this.tourView
         .bind('tour:next', this.tourNavNextBtnClick, this)
@@ -371,6 +373,40 @@ Grp.Views = Grp.Views || {};
      }
     
     },
+    
+    navSatelliteClick: function() {
+    
+     if (this.map.hasLayer(this.satellite)) {
+        this.map.removeLayer(this.satellite);
+        $('.leaflet-tile-pane').animate({opacity: 1});
+     } else {
+        this.map.addLayer(this.satellite);
+        $('.leaflet-tile-pane').animate({opacity: 0.6});
+     }
+    
+    },
+    
+
+    navStreetsClick: function() {
+    
+     if (this.map.hasLayer(this.streets)) {
+        this.map.removeLayer(this.streets);
+     } else {
+        this.map.addLayer(this.streets);
+     }
+     
+    },
+    
+    
+    navZonesClick: function() {
+    
+     if (this.map.hasLayer(this.cityZones)) {
+        this.map.removeLayer(this.cityZones);
+     } else {
+        this.map.addLayer(this.cityZones);
+     }
+    
+    },
 
     /**
      * Event listener for 'tour:prev'.
@@ -442,25 +478,7 @@ Grp.Views = Grp.Views || {};
      */
     layerSwitch: function(layer) {
     
-      if (layer === 'cityZones') {
-        this.map.addLayer(this.cityZones);
-      } else {
-        this.map.removeLayer(this.cityZones);
-      }
-      
-      if (layer === 'skeleton') {
-        this.map.addLayer(this.skeleton);
-        $('.leaflet-tile-pane').animate({opacity: 1});
-      } else {
-        this.map.removeLayer(this.skeleton);
-        $('.leaflet-tile-pane').animate({opacity: 0.6});
-      }
-      
-      if (layer === 'floodLayer3') {
-        this.map.addLayer(this.floodLayer3);
-      } else {
-        this.map.removeLayer(this.floodLayer3);
-      }
+      // do nothing 
       
     },
    

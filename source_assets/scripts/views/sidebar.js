@@ -18,7 +18,10 @@ Grp.Views = Grp.Views || {};
       'click .flood-guage li a[data-layer="floodLayer1"]' : 'navFloodLayer1Click',
       'click .flood-guage li a[data-layer="floodLayer2"]' : 'navFloodLayer2Click',
       'click .flood-guage li a[data-layer="floodLayer3"]' : 'navFloodLayer3Click',
-      'click .flood-guage li a[data-layer="floodLayer4"]' : 'navFloodLayer4Click'
+      'click .flood-guage li a[data-layer="floodLayer4"]' : 'navFloodLayer4Click',
+      'click .context-layers li a[data-layer="satellite"]' : 'navSatelliteClick',
+      'click .context-layers li a[data-layer="streets"]' : 'navStreetsClick',
+      'click .context-layers li a[data-layer="zones"]' : 'navZonesClick'
     },
 
     data: null,
@@ -89,7 +92,26 @@ Grp.Views = Grp.Views || {};
        e.preventDefault();
        $(e.target).toggleClass('active');
       this.trigger('nav:flood4');
+    },
+
+    navSatelliteClick: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:satellite');
+    },
+
+    navStreetsClick: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:streets');
+    },
+    
+    navZonesClick: function(e) {
+       e.preventDefault();
+       $(e.target).toggleClass('active');
+      this.trigger('nav:zones');
     }
+
 
   });
 
