@@ -1,0 +1,157 @@
+%base-overlay-skin {
+  background: #fff;
+  border-radius: $global-radius;
+  box-shadow: 0 0 0 1px rgba($base-color, 0.08), 0 2px 8px 0 rgba($base-color, 0.16);
+}
+
+// MODALS
+
+$modal-padding: 1rem;
+
+// This parent can be any width and height
+// http://css-tricks.com/centering-in-the-unknown/
+.modal {
+  text-align: center;
+  background: none repeat scroll 0 0 rgba($base-color, 0.80);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  overflow-y: auto;
+  padding: 0 1rem;
+  
+  // The ghost, nudged to maintain perfect centering
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 1px;
+    margin-right: -6px; // Adjusts for spacing
+  }
+}
+
+// The element to be centered, can also be of any width and height
+.modal-inner {
+  @extend %base-overlay-skin;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 1rem 0;
+  padding: $modal-padding;
+  @media #{$large-up} {
+    padding: ($modal-padding*2);
+    margin: 2rem 0;
+  }
+}
+
+// Modal sizes
+
+.modal-s .modal-inner{
+  max-width: 22rem;
+}
+.modal-m .modal-inner{
+  max-width: 34rem;
+}
+.modal-l .modal-inner{
+  max-width: 46rem;
+}
+
+// For the animation
+.modal {
+  transition: opacity 0.2s ease 0.1s,  visibility 0.2s linear 0.1s;
+
+  opacity: 0;
+  visibility: hidden;
+
+  .modal-inner {
+    transition: visibility 0.2s linear 0s, opacity 0.2s ease 0s, margin-top 0.2s ease 0s;
+ 
+    opacity: 0;
+    margin-top: -4rem;
+    visibility: hidden;
+  }
+
+  &.revealed {
+    transition: opacity 0.2s ease 0s,  visibility 0.2s linear 0s;
+
+    opacity: 1;
+    visibility: visible;
+
+    .modal-inner {
+      transition: visibility 0.2s linear 0.1s, opacity 0.2s ease 0.1s, margin-top 0.2s ease 0.1s;
+
+      opacity: 1;
+      margin-top: 1rem;
+      visibility: visible;
+    }
+  }
+  @media #{$medium-up} {
+    &.revealed {
+      .modal-inner {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+// Content styles
+.modal {
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    color: rgba($base-color, 0.32);
+    font-weight: bold;
+  }
+
+  &-header {
+    border-bottom: 1px solid tint($base-color, 86%);
+    padding: $modal-padding ($modal-padding*2) $modal-padding $modal-padding;
+    margin: (-$modal-padding) (-$modal-padding) 0 (-$modal-padding);
+    border-radius: $global-radius $global-radius 0 0;
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-title {
+    font-size: 1.25rem;
+    color: tint($base-color, 32%);
+    margin: 0;
+  }
+  &-body {
+    color: tint($base-color, 32%);
+    background: tint($base-color, 92%);
+    margin: 0 (-$modal-padding);
+    padding: $modal-padding;
+
+    > * {
+      margin-bottom: 0.5rem; 
+    }
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-footer {
+    border-top: 1px solid tint($base-color, 86%);
+    margin: 0 (-$modal-padding) (-$modal-padding) (-$modal-padding);
+    padding: $modal-padding;
+    text-align: center;
+    word-spacing: -0.26rem;
+    > p {
+      word-spacing: normal;
+      opacity: 0.64;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+}

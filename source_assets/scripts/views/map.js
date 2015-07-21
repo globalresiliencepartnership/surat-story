@@ -76,17 +76,14 @@ Grp.Views = Grp.Views || {};
       this.$el.html(this.template());
 
       this.sidebarView = new Grp.Views.Sidebar();
-      
       this.tourView = new Grp.Views.Tour();
+      this.aboutModalView = new Grp.Views.AboutModal();
       
-      
+      // Set logo url.
       $('#logo').attr('href', window.location);
-      
-      
+
       _self.tourView.setData(_self.tourItems[0].attributes).render();
-      
- 
-      
+
       console.log(_self.tourItems);
 
       this.map = L.mapbox.map('map', null, { maxZoom: 17, zoomControl: false });
