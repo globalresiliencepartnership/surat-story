@@ -12,16 +12,21 @@ Grp.Views = Grp.Views || {};
 
     initialize: function() {
       this.render();
+      //this.showModal();
     },
 
     render: function() {
       this.$el.html(this.template());
 
       this.$el.find('[data-hook="close-modal"]').on('click', this.hideModal.bind(this));
+      $('[data-hook="open-about"]').on('click', this.showModal.bind(this));
       return this;
     },
 
-    showModal: function() {
+    showModal: function(e) {
+      if (e) {
+        e.preventDefault();
+      }
       this.$el.find('.modal').addClass('revealed');
     },
 

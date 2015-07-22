@@ -35,19 +35,50 @@ h2 {
   background: #000;
 }
 
-
-#logo {
-  width: 150px;
-  height: 100px;
-  background: url("images/grp-logo.png") no-repeat;
-  display: block;
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
-  background-size: contain;
-  text-indent: -9999px;
+  padding: 1rem;
+
+  #logo {
+    h1 {
+      @extend .visually-hidden;
+    }
+    width: 150px;
+    height: 100px;
+    background: url("images/grp-logo.png") no-repeat;
+    display: block;
+    background-size: contain;
+    float: left;
+  }
+
+  .main-nav {
+    float: left;
+    margin: 1.5rem 0 0 2.5rem;
+
+    a {
+      color: #FFF;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 0.5rem;
+      font-weight: bold;
+      opacity: 0.80;
+
+      &:visited {
+        color: #FFF;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }
+
+
 
 .marker {
   &.cluster {
