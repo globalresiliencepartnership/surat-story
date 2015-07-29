@@ -16,5 +16,8 @@
     "grunt-focus": "~0.1.1",
     "time-grunt": "~1.0.0",
     "grunt-contrib-jst": "~0.6.0"
+  },
+  "scripts": {
+    "install": "bower install && bundle install --path bundle/cache",
   }
 }

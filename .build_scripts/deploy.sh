@@ -4,7 +4,7 @@ set -e # halt script on error
 # If this is the publish branch, push it up to gh-pages
 if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then
   echo "Get ready, we're publishing!"
-  cd dist
+  cd app
   git init
   git config user.name "Travis-CI"
   git config user.email "travis@somewhere.com"
