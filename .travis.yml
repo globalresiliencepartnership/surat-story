@@ -13,6 +13,7 @@ cache:
 
 before_install:
 - chmod +x ./.build_scripts/deploy.sh
+- npm install -g grunt-cli
 
 script:
 - grunt prod
