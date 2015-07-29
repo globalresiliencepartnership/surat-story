@@ -187,7 +187,7 @@ module.exports = function(grunt) {
   // Default task with watch.
   grunt.registerTask('default', ['build', 'connect:livereload', 'focus:main']);
   // Prod task.
-  grunt.registerTask('prod', ['clean', 'compass:prod', 'jshint:prod', 'uglify:deps', 'uglify:main', 'templates']);
+  grunt.registerTask('prod', ['clean', 'compass:prod', 'jshint:prod', 'uglify:deps', 'uglify:main', 'copy', 'templates']);
 
 };
 
