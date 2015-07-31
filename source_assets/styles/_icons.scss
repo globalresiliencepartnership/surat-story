@@ -1,0 +1,116 @@
+// ICONS
+
+// UI icon font: ds.o UI Icons
+// Designed by Development Seed
+
+
+@font-face {
+  font-family: "collecticons";
+  src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAWgAAsAAAAACpAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAAPQAAAFY5ukZGY21hcAAAAXwAAACYAAACXtVg75JnbHlmAAACFAAAASYAAAJYmfqXW2hlYWQAAAM8AAAAKQAAADYE4LXNaGhlYQAAA2gAAAAYAAAAJAQvAhRobXR4AAADgAAAAA8AAABMJAAAAGxvY2EAAAOQAAAAKAAAACgFUgXobWF4cAAAA7gAAAAfAAAAIAEeABhuYW1lAAAD2AAAATEAAAJGOsJuNXBvc3QAAAUMAAAAkQAAAUZ9ZyyYeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkfMo4gYGVgYPRhTGNgYHBHUp/ZZBkaGFgYGJgZWbACgLSXFMYHF4xvhJiAnH1mCDCjCACAKIUCHoAAAB4nO2R2Q0CMQwFZ3fD3mfqoAwK4ouaUZoAvzzKwNJ4FMuJIhu4AV1wDxI0LxoUz6g2td4x13riUXuS6iV/PpEb5TinmtvoTfFiz8DIFPcWVjZ2Dk4ucjT1/GOt+f07Zc3R1Mm2Brkz2lBJRrMuN6Ptld4gDwZ5NMiTQZ6NtloWg7wa/a5sBnk3yIdBPg3yZZCzIX8BWfcsr3icZZAxboQwEEXnI0UoSoVSuKaI3MRutqDdNreg2INQkII9hdvdC7jd1lyAm+BuyXiMvEgBaTCe9+d/m0D8IOKX3vhb61p1mOf5e10xhmDXNbWFGRGFSYjGaGI0AcHGaENhHpn5rBVDwcyzieA+U1SYCJe9VMdeJG24mODCeFwS86UZUSBvp8kO3kyTec25wItXx151bu7kixky02l+VUiI/0mELz6DZFF8cL2rUYwy43CmKmVpQbx2bt8/8zmq5N84x53nY9/v8z7qBr0TCR1m9dJTrSgYoMOZPX3I/Wq5vnTLEuh6lYqy4po1FeV5TYuKNv7Z6DWvr0jyoelB6X0ecuTeqeFElKRlnmR/R5sFcFvRLFj+5Vvs7Wbvd6koK65/5d95KAAAeJxjYGRgYADiSyeSWeP5bb4ycDMxgMDFh1YZyDQTA1icA0IBABJlCGcAAAB4nGNgZGBgYgACPTAJYjMyoAJhAAXhAEp4nGNgYGBgohIGAAWkACUAAAAAAAASACQANgBIAFoAbAB8AI4AmgCmALQAwgDcAOoA+AEEARIBLHicY2BkYGAQZuBhANEMDExAzAWEDAz/wXwGAAuOATcAeJx1kT1Ow0AQhZ8TJ4gEISQkRMdWNEjOT0GRkiLpU6Sgc5x14sj2WutNpHQcgxNwDEqOwCk4BM/LFBGSd6X1N9++GVsygBt8IUCzAlz5s1kdXLD64y7pVjgkPwj3MMSTcJ/+WXhA+yI8ZGfBCUF4SXOPN+EOrvEu3KX/EA7Jn8I93OFbuE//IzzAKgiFh3gMXhOT5zpxWWLKeqm3hzy25+qcV9rWmSnVJBqf64UutY2d3qj1SdXH7dS5VKXWFGpuSqfz3KjKmj3j0c65ajYapeKjxBRIYJBza5JD5usSNZY0Wxx4E8O2ptr8isbymflaYYII49b0gqb0HTG9xoYda5x41jjyK6a0DinrlBnDv6Iw971NuploaCp/t5fpEXa+q8IMI+70Xz7yby9+AQxXbEEAAAB4nG2MbQ6CMBAF96EoAi0gXoNDEa1A5Cu1qMfX1mC2iftv3maGAvpeSP+vRIANtgixwx4RDoiRIIWARIYcBY4ocaL03KqHnsbqMj3HH/TqasQKumtaE6+0zNl9qLjF2Yo5Y+cKNiyzfRvd1WPTK+d7gw0UfHAFyZdljj74Gmp9E15IeBXpJxLmh04megOryF5jAAAA) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.collecticon, [class^="collecticon-"], [class*=" collecticon-"] {
+  font-family: "collecticons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: bottom;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.collecticon-chevron-down {
+  @extend .collecticon;
+  content: "\EA01"
+}
+
+.collecticon-chevron-left {
+  @extend .collecticon;
+  content: "\EA02"
+}
+
+.collecticon-chevron-right {
+  @extend .collecticon;
+  content: "\EA03"
+}
+
+.collecticon-chevron-up {
+  @extend .collecticon;
+  content: "\EA04"
+}
+
+.collecticon-sm-chevron-down {
+  @extend .collecticon;
+  content: "\EA05"
+}
+
+.collecticon-sm-chevron-left {
+  @extend .collecticon;
+  content: "\EA06"
+}
+
+.collecticon-sm-chevron-right {
+  @extend .collecticon;
+  content: "\EA07"
+}
+
+.collecticon-sm-chevron-up {
+  @extend .collecticon;
+  content: "\EA08"
+}
+
+.collecticon-sm-triangle-down {
+  @extend .collecticon;
+  content: "\EA09"
+}
+
+.collecticon-sm-triangle-left {
+  @extend .collecticon;
+  content: "\EA0A"
+}
+
+.collecticon-sm-triangle-right {
+  @extend .collecticon;
+  content: "\EA0B"
+}
+
+.collecticon-sm-triangle-up {
+  @extend .collecticon;
+  content: "\EA0C"
+}
+
+.collecticon-sm-xmark {
+  @extend .collecticon;
+  content: "\EA0D"
+}
+
+.collecticon-triangle-down {
+  @extend .collecticon;
+  content: "\EA0E"
+}
+
+.collecticon-triangle-left {
+  @extend .collecticon;
+  content: "\EA0F"
+}
+
+.collecticon-triangle-right {
+  @extend .collecticon;
+  content: "\EA10"
+}
+
+.collecticon-triangle-up {
+  @extend .collecticon;
+  content: "\EA11"
+}
+
+.collecticon-xmark {
+  @extend .collecticon;
+  content: "\EA12"
+}
