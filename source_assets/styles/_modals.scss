@@ -1,6 +1,5 @@
 %base-overlay-skin {
   background: #fff;
-  border-radius: $global-radius;
   box-shadow: 0 0 0 1px rgba($base-color, 0.08), 0 2px 8px 0 rgba($base-color, 0.16);
 }
 
@@ -104,18 +103,28 @@ $modal-padding: 1rem;
 .modal {
   .close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.75rem;
+    right: 0.75rem;
     z-index: 10;
+    opacity: 0.32;
+
     display: block;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
     font-size: 1rem;
-    line-height: 1;
-    color: rgba($base-color, 0.32);
-    font-weight: bold;
+    color: inherit;
+    span {
+      @extend .visually-hidden;
+    }
+    &:before {
+      @extend .collecticon-sm-xmark;
+    }
   }
 
   &-header {
-    border-bottom: 1px solid tint($base-color, 86%);
+    border-bottom: 1px solid tint($base-color, 92%);
     padding: $modal-padding ($modal-padding*2) $modal-padding $modal-padding;
     margin: (-$modal-padding) (-$modal-padding) 0 (-$modal-padding);
     border-radius: $global-radius $global-radius 0 0;
@@ -130,9 +139,8 @@ $modal-padding: 1rem;
   }
   &-body {
     color: tint($base-color, 32%);
-    background: tint($base-color, 92%);
     margin: 0 (-$modal-padding);
-    padding: $modal-padding;
+    padding: ($modal-padding * 2) $modal-padding;
 
     > * {
       margin-bottom: 0.5rem; 
@@ -142,7 +150,7 @@ $modal-padding: 1rem;
     }
   }
   &-footer {
-    border-top: 1px solid tint($base-color, 86%);
+    border-top: 1px solid tint($base-color, 92%);
     margin: 0 (-$modal-padding) (-$modal-padding) (-$modal-padding);
     padding: $modal-padding;
     text-align: center;
