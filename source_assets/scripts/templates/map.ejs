@@ -1,7 +1,7 @@
 <div id="header">
-  <a id="logo" href="/grp-map"><h1>Global Resilience Partnership</h1></a>
+  <a id="logo" href="http://www.globalresiliencepartnership.org/"><h1>Global Resilience Partnership</h1></a>
   <nav class="main-nav">
-    <a href="#about" title="See about" data-hook="open-about">About</a>
+    <a href="#about" title="See notes about the data" data-hook="open-about">Data</a>
   </nav>
 </div>
 <div id="map"><!-- Map here --></div>
@@ -9,14 +9,23 @@
 <div id="sidebar">
 
   <div class="flood-guage">
-   <ul>
-     <li><a data-layer="floodLayer4" href="#"><span class="flood-ind">+10 ft</span></a></li>
-     <li><a data-layer="floodLayer3" href="#"><span class="flood-ind">5-10 ft</span></a></li>
-     <li><a data-layer="floodLayer2" href="#"><span class="flood-ind">3-5 ft</span></a></li>
-     <li><a data-layer="floodLayer1" href="#"><span class="flood-ind">0-3 ft</span></a></li>
-   </ul>
+    <ul>
+      <li><a data-layer="floodLayer4" href="#"><span class="flood-ind">+10 ft</span></a></li>
+      <li><a data-layer="floodLayer3" href="#"><span class="flood-ind">5-10 ft</span></a></li>
+      <li><a data-layer="floodLayer2" href="#"><span class="flood-ind">3-5 ft</span></a></li>
+      <li><a data-layer="floodLayer1" href="#"><span class="flood-ind">0-3 ft</span></a></li>
+
+      <li class="drop dropup more-info right">
+        <a href="#" class="trigger" data-toggle="drop">?</a>
+        <div class="drop-content">
+          <h3>2006 Flood Levels</h3>
+          <p>Approximate average water levels reported during August 2006 flooding.</p>
+        </div>
+      </li>
+
+    </ul>
   </div>
-  
+
   <div class="context-layers">
     <ul>
       <li><a data-layer="satellite" href="#"><span class="context-ind">Satellite</span></a></li>
@@ -26,9 +35,8 @@
   
   <nav>
     <ul>
-      <li><a href="#" id="tour-prev" title="Previous" class="tour-cntrl"><</a></li>
-	  <li><a href="#" id="tour-next" title="Next" class="tour-cntrl">></a><li>
-      <!-- <li><a href="#" title="About" id="nav-about">?</a></li> -->
+      <li><a href="#" id="tour-prev" title="Previous" class="tour-cntrl"><span>Previous</span></a></li>
+	    <li><a href="#" id="tour-next" title="Next" class="tour-cntrl"><span>Next</span></a><li>
     </ul>
   </nav>
   <div class="project"><!-- sidebar.ejs --></div>

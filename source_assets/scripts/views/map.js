@@ -176,6 +176,12 @@ Grp.Views = Grp.Views || {};
         .bind('tour:next', this.tourNavNextBtnClick, this)
         .bind('tour:prev', this.tourNavPrevBtnClick, this);
 
+      this.$el.find('[data-toggle="drop"]').hover(function(e) {
+         _self.$el.find('[data-toggle="drop"]').parent().addClass('open');
+      }, function(e) {
+         _self.$el.find('[data-toggle="drop"]').parent().removeClass('open');
+      });
+
       return this;
     },
 
