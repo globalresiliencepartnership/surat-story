@@ -10,7 +10,6 @@ app/assets/scripts/*
 app/assets/styles/*
 app/assets/templates/*
 !app/assets/**/.gitkeep
-!app/assets/images/*
 
 # Local
 .resources
