@@ -97,7 +97,7 @@ Grp.Views = Grp.Views || {};
       // skeleton: devseed.c6aac938
       // The streets layer is always visible
       this.streets = L.mapbox.tileLayer('devseed.c6aac938');
-      this.satellite = L.mapbox.tileLayer('devseed.la1fieg0');
+      this.satellite = L.mapbox.tileLayer('globalresiliencepartnership.p26a3dl1');
       this.map.addLayer(this.streets);
 
       // Flood layers
